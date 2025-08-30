@@ -74,7 +74,6 @@ def get_paragraphs():
         for future in as_completed(future_to_para):
             try:
                 summ = future.result()
-                # print(summ)
                 summaries.append(summ)
             except Exception as exc:
                 para = future_to_para[future]
@@ -88,7 +87,5 @@ def get_paragraphs():
 
 # get_paragraphs()
 paragraphs = extract_paragraphs("../Data/First Project Assignment - Research based design report.pdf")
-paragraph = ""
 for para in paragraphs:
-    print(para)
-print(paragraph)
+    print(f"{para}\n")
